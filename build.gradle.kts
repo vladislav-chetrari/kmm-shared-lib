@@ -3,11 +3,14 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.vchetrari"
+group = "com.github.vladislav-chetrari"
 version = "1.0"
 
 repositories {
     mavenCentral()
+    maven {
+        setUrl("https://jitpack.io")
+    }
 }
 
 kotlin {
