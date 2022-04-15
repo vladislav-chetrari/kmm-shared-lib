@@ -22,9 +22,11 @@ jobs:
         uses: stCarolas/setup-maven@v4.3
         
       - name: Gradle Build and publish to Maven local
-        uses: gradle/gradle-build-action@v2.1.5  
+        #run: ./gradlew publishToMavenLocal
+        uses: puredevops/sample-action@v1.3
         with:
-          arguments: publishToMavenLocal
+          arguments:
+            publishToMavenLocal
         
       - name: check maven local
         run: |
