@@ -14,21 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      
-      - name: Run a one-line script
-        run: echo Hello, world!    
-        
-      - name: Setup Maven
-        uses: stCarolas/setup-maven@v4.3
-        
+
       - name: Gradle Build and publish to Maven local
-        run: ./gradlew publishToMavenLocal
-        #uses: puredevops/sample-action@v1.3
-        #with:
-         # arguments:
-          #  publishToMavenLocal
-        
-      - name: check maven local
         run: |
-          cd ~/.m2/repository/com/github/vladislav-chetrari
-          ls
+          chmod +x ./gradlew
+          ./gradlew build
+          cd build/libs
+          ls -la
+        
