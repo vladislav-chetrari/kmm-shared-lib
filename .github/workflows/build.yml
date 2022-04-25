@@ -18,15 +18,5 @@ jobs:
       - name: Give gradlew access
         run: chmod +x ./gradlew
 
-      - name: Gradle clean build
-        run: |
-          ./gradlew clean
-          ./gradlew build
-          cd build/libs
-          echo "\n Built artifacts:"
-          ls -la
-
       - name: Publish to Sonatype
-        run: |
-          chmod +x ./gradlew
-          ./gradlew publishAllPublicationsToSonatypeRepository
+        run: ./gradlew publishAllPublicationsToSonatypeRepository
