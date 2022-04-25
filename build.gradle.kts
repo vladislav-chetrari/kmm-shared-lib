@@ -1,6 +1,6 @@
 plugins {
     kotlin("multiplatform") version "1.6.20"
-    id("maven-publish")
+    id("convention.publication")
 }
 
 group = "io.github.vladislav-chetrari"
